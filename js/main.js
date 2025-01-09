@@ -1,28 +1,5 @@
 'use strict'
 
-
-/**
- * 검색창 제어
- */
-// 검색창 요소(.search) 찾기.
-const searchEl = document.querySelector('.search')
-const searchInputEl = searchEl.querySelector('input')
-// 검색창 요소를 클릭하면 실행.
-searchEl.addEventListener('click', function () {
-  searchInputEl.focus()
-})
-// 검색창 요소 내부 실제 input 요소에 포커스되면 실행.
-searchInputEl.addEventListener('focus', function () {
-  searchEl.classList.add('focused')
-  searchInputEl.setAttribute('placeholder', '통합검색')
-})
-// 검색창 요소 내부 실제 input 요소에서 포커스가 해제(블러)되면 실행.
-searchInputEl.addEventListener('blur', function () {
-  searchEl.classList.remove('focused')
-  searchInputEl.setAttribute('placeholder', '')
-})
-
-
 //스타벅스 옆 배너가 점점 사라지게끔 하는 코드
 const badegeEl = document.querySelector('header .badges');
 const toTopEl = document.querySelector('#to-top');
@@ -165,5 +142,3 @@ spyEls.forEach(function(spyEl) {
     .addTo(new ScrollMagic.Controller());
 });
 
-const thisYear = document.querySelector('.this-year');
-thisYear.textContent = new Date().getFullYear() + "Starbucks coffee Company. All Rights Reserved.";
